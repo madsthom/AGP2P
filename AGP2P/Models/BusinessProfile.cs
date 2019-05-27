@@ -16,5 +16,6 @@ namespace AGP2P.Models
 
 
         public ICollection<Part> Parts { get; set; }
+        public ICollection<ApplicationUser> ApplicationUsers { get; set; }
     }
 }

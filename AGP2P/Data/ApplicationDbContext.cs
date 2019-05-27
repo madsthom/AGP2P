@@ -16,9 +16,17 @@ namespace AGP2P.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // One-to-many relationship between BusinessProfile and Parts 
             modelBuilder.Entity<BusinessProfile>()
                 .HasMany<Part>(s => s.Parts)
                 .WithOne(g => g.BusinessProfile)
+                .HasForeignKey(s => s.BusinessProfileId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // One-to-many relationship between BusinessProfile and ApplicationUser 
+            modelBuilder.Entity<BusinessProfile>()
+                .HasMany<ApplicationUser>(au => au.ApplicationUsers)
+                .WithOne(bp => bp.BusinessProfile)
                 .HasForeignKey(s => s.BusinessProfileId)
                 .OnDelete(DeleteBehavior.Cascade);
 
