@@ -24,7 +24,13 @@ namespace AGP2P.Data
 
             modelBuilder.Entity<Part>()
                 .HasKey(p => p.PartId);
+
+            base.OnModelCreating(modelBuilder);
         }
+
+
+        public DbSet<Part> Parts { get; set; }
+        public DbSet<BusinessProfile> BusinessProfiles { get; set; }
 
     }
 }
