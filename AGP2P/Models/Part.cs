@@ -11,8 +11,6 @@ namespace AGP2P.Models
         public string PartName { get; set; }
         public int Amount { get; set; }
 
-
-
         public int BusinessProfileId { get; set; }
         public BusinessProfile BusinessProfile { get; set; }
 

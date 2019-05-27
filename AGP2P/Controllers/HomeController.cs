@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using AGP2P.Data;
 using Microsoft.AspNetCore.Mvc;
 using AGP2P.Models;
 
@@ -16,6 +17,11 @@ namespace AGP2P.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult TestView()
         {
             return View();
         }
