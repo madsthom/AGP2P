@@ -25,10 +25,15 @@ namespace AGP2P.Data
 
             // One-to-many relationship between BusinessProfile and ApplicationUser 
             modelBuilder.Entity<BusinessProfile>()
-                .HasMany<ApplicationUser>(au => au.ApplicationUsers)
-                .WithOne(bp => bp.BusinessProfile)
+                .HasMany<ApplicationUser>(bp => bp.ApplicationUsers)
+                .WithOne(a => a.BusinessProfile)
                 .HasForeignKey(s => s.BusinessProfileId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            //modelBuilder.Entity<ApplicationUser>()
+            //    .HasOne<BusinessProfile>(bp => bp.BusinessProfile)
+            //    .WithMany(au => au.ApplicationUsers)
+            //    .HasForeignKey(f => f.BusinessProfileId);
 
             modelBuilder.Entity<Part>()
                 .HasKey(p => p.PartId);
@@ -39,6 +44,5 @@ namespace AGP2P.Data
 
         public DbSet<Part> Parts { get; set; }
         public DbSet<BusinessProfile> BusinessProfiles { get; set; }
-
     }
 }

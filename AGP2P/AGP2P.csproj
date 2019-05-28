@@ -1,10 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <UserSecretsId>aspnet-AGP2P-3ADF37DA-4DF4-4841-A29F-D2C69875E0A7</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20190528125955_AddBusinessProfileIdToUser.cs" />
+    <Compile Remove="Data\Migrations\20190528125955_AddBusinessProfileIdToUser.Designer.cs" />
+  </ItemGroup>
 
 
   <ItemGroup>
