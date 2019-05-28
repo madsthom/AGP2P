@@ -1,5 +1,6 @@
 ﻿@using AGP2P.Controllers
 @using AGP2P.Data
+@model List<Part>
 
 @{
     ViewData["Title"] = "TestView";
@@ -8,5 +9,11 @@
 <h1>TestView</h1>
 @Html.TextBox("Torben")
 <input id="button1" type="button" value="TestButton" />
+
+@foreach (Part p in Model)
+{
+<p><label>@p.PartName</label></p>
+}
+
 
 
